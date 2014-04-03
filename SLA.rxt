@@ -1,0 +1,84 @@
+<artifactType type="application/vnd.wso2-application+xml" shortName="sla" singularLabel="SLA" pluralLabel="SLAs" hasNamespace="false" iconSet="13">
+    <storagePath>/slas/@{name}</storagePath>
+	<nameAttribute>overview_name</nameAttribute>
+    <ui>
+        <list>
+            <column name="SLA Name">
+                <data type="path" value="overview_name" href="/slas/@{name}"/>
+            </column>
+            <column name="Service">
+                <data type="text" value="overview_service"/>
+            </column>
+            <column name="Description">
+                <data type="text" value="overview_description"/>
+            </column>
+        </list>
+    </ui>
+    <content>
+        <table name="Overview">
+            <field type="text" required="true">
+                <name>Name</name>
+            </field>
+            <field type="text" required="true">
+                <name>Service</name>
+            </field>
+            <field type="text-area">
+                <name>Description</name>
+            </field>
+	</table>
+        <table name="Request Count Levels" columns="4"  maxoccurs="unbounded">
+	    <subheading>
+	        <heading>Level Name</heading>
+	        <heading>Min Requests (per second)</heading>
+	        <heading>Max Requests (per second)</heading>
+	        <heading>Alert</heading>
+	    </subheading>
+	    <field type="text">
+	        <name label="Name">Name</name>
+	    </field>
+	    <field type="text">
+	        <name label="Min">Min</name>
+	    </field>
+	    <field type="text">
+	        <name label="Max">Max</name>
+	    </field>
+	    <field type="options"> <name>Alerting</name> <values> <value>No</value> <value>Yes</value> </values> </field>
+	</table>
+	<table name="Response Latency Levels" columns="4"  maxoccurs="unbounded">
+	    <subheading>
+	        <heading>Level Name</heading>
+	        <heading>Min Response Time (milliseconds)</heading>
+	        <heading>Max Response Time (milliseconds)</heading>
+	        <heading>Alert</heading>
+	    </subheading>
+	    <field type="text">
+	        <name label="Name">Name</name>
+	    </field>
+	    <field type="text">
+	        <name label="Min">Min</name>
+	    </field>
+	    <field type="text">
+	        <name label="Max">Max</name>
+	    </field>
+	    <field type="options"> <name>Alerting</name> <values> <value>No</value> <value>Yes</value> </values> </field>
+	</table>
+	<table name="Fault Count Levels" columns="4"  maxoccurs="unbounded">
+	    <subheading>
+	        <heading>Level Name</heading>
+	        <heading>Min Service Faults (per day)</heading>
+	        <heading>Max Service Faults (per day)</heading>
+	        <heading>Alert</heading>
+	    </subheading>
+	    <field type="text">
+	        <name label="Name">Name</name>
+	    </field>
+	    <field type="text">
+	        <name label="Min">Min</name>
+	    </field>
+	    <field type="text">
+	        <name label="Max">Max</name>
+	    </field>
+	    <field type="options"> <name>Alerting</name> <values> <value>No</value> <value>Yes</value> </values> </field>
+	</table>
+    </content>
+</artifactType>
